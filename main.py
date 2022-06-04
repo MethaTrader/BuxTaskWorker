@@ -2,8 +2,11 @@ import requests as request
 from bs4 import BeautifulSoup
 import json
 
+import Bot
+import Task
+
 # cookie session of seofast
-cookies = {"entrance": "", "PHPSESSID": "",
+cookies = {"entrance": "YOUR_COOKIE", "PHPSESSID": "YOUR_COOKIE",
            "taskuser": "tangens"}
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.61 Safari/537.36',
@@ -40,4 +43,4 @@ for tr in soup2.find_all('tr'): #find all table rows
     i = i + 1
 
 jsonString = json.dumps(data, ensure_ascii=False) # array to json
-save("tasks.json", jsonString) #save to file
+save("tasks.json", jsonString)  #save to file
